@@ -4,6 +4,8 @@ import android.os.Handler;
 
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
+import org.jsoup.nodes.Element;
+import org.jsoup.select.Elements;
 
 public class DownThread {
     Handler handler;
@@ -16,7 +18,8 @@ public class DownThread {
     public void run() {
         try {
             Document doc = Jsoup.connect(strurl).get();
-            System.out.println(doc);
+            Elements es1 = doc.getElementsByTag("figure");
+
         } catch (Exception e) {
             e.printStackTrace();
         }
