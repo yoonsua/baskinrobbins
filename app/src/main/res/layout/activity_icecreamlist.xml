@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".icecreamlist">
+
+    <!-- 메인 화면 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:visibility="visible">
+
+        <!-- Header -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="80sp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="80sp"
+                android:layout_height="match_parent"
+                android:src="@drawable/logo"
+                android:padding="12sp"/>
+
+            <ImageView
+                android:layout_width="40sp"
+                android:layout_height="wrap_content"
+                android:src="@drawable/txt_fom"
+                android:layout_gravity="center"
+                android:layout_marginLeft="130sp"/>
+
+            <ImageView
+                android:layout_width="55sp"
+                android:layout_height="wrap_content"
+                android:src="@drawable/txt_store"
+                android:layout_gravity="center"
+                android:layout_marginLeft="30sp"/>
+
+            <ImageView
+                android:id="@+id/openmenu"
+                android:layout_width="30sp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30sp"
+                android:src="@drawable/hamburger_color"/>
+
+        </LinearLayout>
+
+        <!-- Main -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="160sp"
+                android:src="@drawable/bg_icecream_menu"/>
+
+            <!--<ImageView-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="30sp"-->
+                <!--android:src="@drawable/h_monthly_best_icecream"-->
+                <!--android:layout_marginTop="20sp"-->
+                <!--android:layout_marginBottom="10sp"/>-->
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_marginTop="20sp"
+                android:layout_marginBottom="20sp">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/icon_title_1"/>
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="18sp"
+                    android:src="@drawable/h_title_A"
+                    android:layout_marginLeft="10sp"
+                    android:layout_marginRight="10sp"/>
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/icon_title_2"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>
