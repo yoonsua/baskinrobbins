@@ -7,13 +7,76 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+    <!-- 메인 화면 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:visibility="visible">
+
+        <!-- Header -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="80sp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="80sp"
+                android:layout_height="match_parent"
+                android:src="@drawable/logo"
+                android:padding="12sp"/>
+
+            <ImageView
+                android:layout_width="40sp"
+                android:layout_height="wrap_content"
+                android:src="@drawable/txt_fom"
+                android:layout_gravity="center"
+                android:layout_marginLeft="130sp"/>
+
+            <ImageView
+                android:layout_width="55sp"
+                android:layout_height="wrap_content"
+                android:src="@drawable/txt_store"
+                android:layout_gravity="center"
+                android:layout_marginLeft="30sp"/>
+
+            <ImageView
+                android:id="@+id/openmenu"
+                android:layout_width="30sp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30sp"
+                android:src="@drawable/hamburger_color"/>
+
+        </LinearLayout>
+
+        <!-- Main -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="120sp"
+                android:src="@drawable/main_header"/>
+
+            <ViewFlipper
+                android:id="@+id/image_slide"
+                android:layout_width="match_parent"
+                android:layout_height="440sp" />
+
+        </LinearLayout>
+    </LinearLayout>
+
     <!-- 메뉴바 -->
     <LinearLayout
+        android:id="@+id/submenu"
         android:layout_width="300sp"
         android:layout_height="match_parent"
         android:orientation="vertical"
         android:layout_gravity="right"
-        android:visibility="invisible">
+        android:visibility="invisible"
+        android:background="#fff">
 
         <!-- 메뉴바 Header -->
         <LinearLayout
@@ -37,6 +100,7 @@
                 android:layout_marginLeft="20dp"/>
 
             <ImageView
+                android:id="@+id/closemenu"
                 android:layout_width="30sp"
                 android:layout_height="wrap_content"
                 android:src="@drawable/hamburger"
@@ -76,16 +140,35 @@
                 android:orientation="horizontal">
 
                 <ImageView
+                    android:id="@+id/img_menu"
                     android:layout_width="70sp"
                     android:layout_height="match_parent"
                     android:src="@drawable/nav_menu"/>
 
                 <ImageView
+                    android:id="@+id/menudown"
                     android:layout_width="15sp"
                     android:layout_height="wrap_content"
                     android:src="@drawable/ico_nav"
                     android:layout_gravity="center"
                     android:layout_marginLeft="170sp"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/txt_icecream"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone">
+
+                <TextView
+                    android:id="@+id/moveice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="아이스크림"
+                    android:textSize="14sp"
+                    android:textColor="#612F1F"
+                    android:layout_marginLeft="20sp"/>
 
             </LinearLayout>
 
@@ -188,63 +271,4 @@
 
     </LinearLayout>
 
-    <!-- 메인 화면 -->
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
-
-        <!-- Header -->
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="80sp"
-            android:orientation="horizontal">
-
-            <ImageView
-                android:layout_width="80sp"
-                android:layout_height="match_parent"
-                android:src="@drawable/logo"
-                android:padding="12sp"/>
-
-            <ImageView
-                android:layout_width="40sp"
-                android:layout_height="wrap_content"
-                android:src="@drawable/txt_fom"
-                android:layout_gravity="center"
-                android:layout_marginLeft="130sp"/>
-
-            <ImageView
-                android:layout_width="55sp"
-                android:layout_height="wrap_content"
-                android:src="@drawable/txt_store"
-                android:layout_gravity="center"
-                android:layout_marginLeft="30sp"/>
-
-            <ImageView
-                android:layout_width="30sp"
-                android:layout_height="wrap_content"
-                android:src="@drawable/hamburger_color"
-                android:layout_marginLeft="30sp"/>
-
-        </LinearLayout>
-
-        <!-- Main -->
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-
-            <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="120sp"
-                android:src="@drawable/main_header"/>
-
-            <view
-                android:layout_width="wrap_content"
-                android:layout_height="440sp"
-                class="android.support.v4.view.ViewPager"
-                android:id="@+id/viewpager" />
-
-        </LinearLayout>
-    </LinearLayout>
 </FrameLayout>
