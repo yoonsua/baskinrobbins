@@ -5,8 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"
-    android:fontFamily="@font/nanumgothic">
+    tools:context=".MainActivity">
 
     <!-- 메뉴바 -->
     <LinearLayout
@@ -239,6 +238,12 @@
                 android:layout_width="match_parent"
                 android:layout_height="120sp"
                 android:src="@drawable/main_header"/>
+
+            <View
+                android:id="@+id/viewpager"
+                class="android.support.v4.view.ViewPager"
+                android:layout_width="match_parent"
+                android:layout_height="440sp"/>
 
         </LinearLayout>
     </LinearLayout>
