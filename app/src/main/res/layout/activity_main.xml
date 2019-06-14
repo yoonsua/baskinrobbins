@@ -239,11 +239,11 @@
                 android:layout_height="120sp"
                 android:src="@drawable/main_header"/>
 
-            <View
-                android:id="@+id/viewpager"
+            <view
+                android:layout_width="wrap_content"
+                android:layout_height="440sp"
                 class="android.support.v4.view.ViewPager"
-                android:layout_width="match_parent"
-                android:layout_height="440sp"/>
+                android:id="@+id/viewpager" />
 
         </LinearLayout>
     </LinearLayout>
