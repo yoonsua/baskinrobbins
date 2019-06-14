@@ -1,34 +1,28 @@
 package com.example.baskinrobbins;
 
-import android.os.Handler;
-import android.os.Message;
+import android.annotation.SuppressLint;
+import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.widget.ListView;
+import android.view.View;
 
 public class MainActivity extends AppCompatActivity {
-    ListView listview;
-    ListViewAdapter adapter;
 
-    Handler handler = new Handler() {
-        @Override
-        public void handleMessage(Message msg) {
-            System.out.println("ㅁ");
-        }
-    };
+    SlideAdapter adapter;
+    ViewPager viewpager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        setViews();
+        imgslide();
+    }
+    private void imgslide() {
+        viewpager = (ViewPager) findViewById(R.id.viewpager);
+
+        adapter = new SlideAdapter(this);
+        viewpager.setAdapter(adapter);
     }
 
-    private void setViews() {
-        listview = (ListView) findViewById(R.id.listview);
-
-        DownThread down = new DownThread(handler);
-        down.start();
-    }
 }
