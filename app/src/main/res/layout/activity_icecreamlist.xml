@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -81,7 +81,7 @@
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="18sp"
-                    android:src="@drawable/h_title_A"
+                    android:src="@drawable/h_title"
                     android:layout_marginLeft="10sp"
                     android:layout_marginRight="10sp"/>
 
@@ -96,4 +96,207 @@
 
     </LinearLayout>
 
-</LinearLayout>
+    <!-- 메뉴바 -->
+    <LinearLayout
+        android:id="@+id/submenu"
+        android:layout_width="300sp"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_gravity="right"
+        android:visibility="invisible"
+        android:background="#fff">
+
+        <!-- 메뉴바 Header -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50sp"
+            android:background="#FF7C98"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="40sp"
+                android:layout_height="wrap_content"
+                android:src="@drawable/txt_login"
+                android:layout_gravity="center"
+                android:layout_marginLeft="20dp"/>
+
+            <ImageView
+                android:layout_width="30sp"
+                android:layout_height="wrap_content"
+                android:src="@drawable/txt_join"
+                android:layout_gravity="center"
+                android:layout_marginLeft="20dp"/>
+
+            <ImageView
+                android:id="@+id/closemenu"
+                android:layout_width="30sp"
+                android:layout_height="wrap_content"
+                android:src="@drawable/hamburger"
+                android:layout_marginLeft="140sp"/>
+
+        </LinearLayout>
+
+        <!-- nav -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="20sp"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50sp"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="200sp"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/nav_favor"/>
+
+                <ImageView
+                    android:layout_width="15sp"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ico_nav"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="40sp"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50sp"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/img_menu"
+                    android:layout_width="70sp"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/nav_menu"/>
+
+                <ImageView
+                    android:id="@+id/menudown"
+                    android:layout_width="15sp"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ico_nav"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="170sp"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/txt_icecream"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone">
+
+                <TextView
+                    android:id="@+id/moveice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="아이스크림"
+                    android:textSize="14sp"
+                    android:textColor="#612F1F"
+                    android:layout_marginLeft="20sp"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50sp"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="70sp"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/nav_event"/>
+
+                <ImageView
+                    android:layout_width="15sp"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ico_nav"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="170sp"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50sp"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="70sp"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/nav_store"/>
+
+                <ImageView
+                    android:layout_width="15sp"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ico_nav"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="170sp"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50sp"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="70sp"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/nav_about"/>
+
+                <ImageView
+                    android:layout_width="15sp"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ico_nav"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="170sp"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <!-- sns icon -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:paddingLeft="20sp"
+            android:paddingRight="20sp">
+
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:src="@drawable/btn_facebook"
+                android:layout_weight="1"
+                android:padding="10sp"/>
+
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:src="@drawable/btn_blog"
+                android:layout_weight="1"
+                android:padding="10sp"/>
+
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:src="@drawable/btn_twitter"
+                android:layout_weight="1"
+                android:padding="10sp"/>
+
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:src="@drawable/btn_instagram"
+                android:layout_weight="1"
+                android:padding="10sp"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</FrameLayout>
