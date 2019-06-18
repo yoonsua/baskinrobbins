@@ -66,6 +66,7 @@
                 android:layout_height="440sp" />
 
         </LinearLayout>
+
     </LinearLayout>
 
     <!-- 메뉴바 -->
@@ -270,5 +271,6 @@
         </LinearLayout>
 
     </LinearLayout>
+
 
 </FrameLayout>
