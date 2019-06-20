@@ -23,14 +23,20 @@ public class DownThread extends Thread {
       try {
         Document doc = Jsoup.connect(strurl).get();
         Elements figures = doc.getElementsByTag("figure");
+        Elements divs = doc.getElementsByTag("div");
         flag = false;
         for (Element figure : figures) {
           Elements figcaptions = doc.getElementsByTag("figcaption");
           if (figure.className().equals("img")) {
             Elements imgs = doc.getElementsByTag("img");
-            for(Element img : imgs) {
+            for (Element img : imgs) {
               String imgtxt = img.text();
-              String imgsrc = imgtxt.replace("img src= alt");
+              String imgsrc = imgtxt.replace("img src = alt", "");
+              Message msg = new Message();
+              msg.what = 1;
+              msg.obj = imgsrc;
+              handler.sendMessage(msg);
+              flag = true;
             }
           }
           for (Element figcaption : figcaptions) {
@@ -39,6 +45,18 @@ public class DownThread extends Thread {
               Message msg = new Message();
               msg.what = 1;
               msg.obj = span.text();
+              handler.sendMessage(msg);
+              flag = true;
+            }
+          }
+        }
+        for(Element div : divs) {
+          if(div.className().equals("hashtag")) {
+            Elements as = doc.getElementsByTag("a");
+            for(Element a : as) {
+              Message msg = new Message();
+              msg.what = 1;
+              msg.obj = a.text();
               handler.sendMessage(msg);
               flag = true;
             }
