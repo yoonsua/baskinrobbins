@@ -26,6 +26,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         public void handleMessage(Message msg) {
             if(msg.what == 1) {
 
+            } else {
+
             }
         }
     };

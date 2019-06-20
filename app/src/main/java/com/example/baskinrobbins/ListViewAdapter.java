@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 
@@ -35,6 +36,10 @@ public class ListViewAdapter extends BaseAdapter {
         LayoutInflater inflater = (LayoutInflater) CONTEXT.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         convertView = inflater.inflate(R.layout.iceitem, parent, false);
       }
+
+      TextView icename = convertView.findViewById(R.id.icename);
+      icename.setText(icecream.get(position));
+
       return convertView;
     }
 }
