@@ -9,38 +9,48 @@ import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
 public class DownThread extends Thread {
-    Handler handler;
-    private String strurl = "https://m.baskinrobbins.co.kr/menu/list.php?top=A";
-    private String starname;
+  Handler handler;
+  private String strurl = "http://m.baskinrobbins.co.kr/menu/list.php?top=A";
+  private String starname;
 
-    public DownThread(Handler handler) {
-        this.handler = handler;
-    }
+  public DownThread(Handler handler) {
+    this.handler = handler;
+  }
 
-    public void run() {
-        boolean flag = true;
-        while (flag) {
-            try {
-                Document doc = Jsoup.connect(strurl).get();
-                Elements es1 = doc.getElementsByTag("figure");
-                System.out.print("안녕하세요");
-                for (Element e1 : es1) {
-                    System.out.print(e1);
-                    if (e1.className().equals("name")) {
-                        starname = e1.text();
-                        Message msg = new Message();
-                        msg.what = 1; // 다음역이 있는 지 확인
-                        msg.obj = e1.text(); // 다음역의 이름 저장
-                        handler.sendMessage(msg);
-                    }
-                }
-            } catch (Exception e) {
-                System.out.println("오류발생");
-                System.out.println(e.getMessage());
+  public void run() {
+    boolean flag = true;
+    while (flag) {
+      try {
+        Document doc = Jsoup.connect(strurl).get();
+        Elements figures = doc.getElementsByTag("figure");
+        flag = false;
+        for (Element figure : figures) {
+          Elements figcaptions = doc.getElementsByTag("figcaption");
+          if (figure.className().equals("img")) {
+            Elements imgs = doc.getElementsByTag("img");
+            for(Element img : imgs) {
+              String imgtxt = img.text();
+              String imgsrc = imgtxt.replace("img src= alt");
             }
+          }
+          for (Element figcaption : figcaptions) {
+            Elements spans = doc.getElementsByTag("span");
+            for (Element span : spans) {
+              Message msg = new Message();
+              msg.what = 1;
+              msg.obj = span.text();
+              handler.sendMessage(msg);
+              flag = true;
+            }
+          }
         }
-        Message msg = new Message();
-        msg.what = 0;
-        handler.sendMessage(msg);
+      } catch (Exception e) {
+        System.out.println("오류발생");
+        System.out.println(e.getMessage());
+      }
     }
+    Message msg = new Message();
+    msg.what = 0;
+    handler.sendMessage(msg);
+  }
 }
