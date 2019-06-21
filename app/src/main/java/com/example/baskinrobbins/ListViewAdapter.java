@@ -42,4 +42,9 @@ public class ListViewAdapter extends BaseAdapter {
 
       return convertView;
     }
+
+    public void addItem(String item) {
+        icecream.add(item);
+        notifyDataSetChanged();
+    }
 }
