@@ -1,8 +1,11 @@
 package com.example.baskinrobbins;
 
+import android.content.Context;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 
@@ -11,21 +14,37 @@ public class ListViewAdapter extends BaseAdapter {
 
     @Override
     public int getCount() {
-        return 0;
+        return icecream.size();
     }
 
     @Override
     public Object getItem(int position) {
-        return null;
+        return position;
     }
 
     @Override
     public long getItemId(int position) {
-        return 0;
+        return position;
     }
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        return null;
+      final int POS = position;
+      final Context CONTEXT = parent.getContext();
+
+      if(convertView == null) {
+        LayoutInflater inflater = (LayoutInflater) CONTEXT.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        convertView = inflater.inflate(R.layout.iceitem, parent, false);
+      }
+
+      TextView icename = convertView.findViewById(R.id.icename);
+      icename.setText(icecream.get(position));
+
+      return convertView;
+    }
+
+    public void addItem(String item) {
+        icecream.add(item);
+        notifyDataSetChanged();
     }
 }

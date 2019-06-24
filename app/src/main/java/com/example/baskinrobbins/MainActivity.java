@@ -1,6 +1,8 @@
 package com.example.baskinrobbins;
 
 import android.content.Intent;
+import android.os.Handler;
+import android.os.Message;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -17,8 +19,19 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     LinearLayout submenu, txt_icecream, main;
     TextView moveice;
     ViewFlipper v_flipper;
+    ListViewAdapter adapter;
 
     int images[] = {R.drawable.slide1, R.drawable.slide2, R.drawable.slide3, R.drawable.slide4, R.drawable.slide5, R.drawable.slide6, R.drawable.slide7, R.drawable.slide8};
+
+    Handler handler = new Handler() {
+        public void handleMessage(Message msg) {
+            if(msg.what == 1) {
+                adapter.addItem((String) msg.obj);
+            } else {
+                System.out.println("결과 없음");
+            }
+        }
+    };
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,6 +40,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         setViews();
         imgslide();
+
+        adapter = new ListViewAdapter();
+
     }
 
     private void setViews() {
@@ -42,6 +58,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         closemenu.setOnClickListener(this);
         menudown.setOnClickListener(this);
         moveice.setOnClickListener(this);
+
+        DownThread thread = new DownThread(handler);
+        thread.start();
     }
 
     @Override

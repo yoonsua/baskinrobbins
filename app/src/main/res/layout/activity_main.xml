@@ -54,11 +54,17 @@
 
                     </LinearLayout>
 
+<<<<<<< HEAD
                     <LinearLayout
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
                         android:gravity="center">
+=======
+        </LinearLayout>
+
+    </LinearLayout>
+>>>>>>> 77dd277b956c5355499741fa678b64a8e3c3fa69
 
                         <ImageView
                             android:layout_width="58sp"
@@ -204,5 +210,6 @@
         </LinearLayout>
 
     </LinearLayout>
+
 
 </FrameLayout>
