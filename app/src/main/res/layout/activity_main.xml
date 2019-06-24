@@ -1,271 +1,205 @@
-<?xml version="1.0" encoding="utf-8"?>
-<FrameLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <!-- 메인 화면 -->
-    <LinearLayout
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:visibility="visible">
+        android:visibility="invisible">
 
-        <!-- Header -->
+        <!-- 메인화면 -->
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="80sp"
-            android:orientation="horizontal">
-
-            <ImageView
-                android:layout_width="80sp"
-                android:layout_height="match_parent"
-                android:src="@drawable/logo"
-                android:padding="12sp"/>
-
-            <ImageView
-                android:layout_width="40sp"
-                android:layout_height="wrap_content"
-                android:src="@drawable/txt_fom"
-                android:layout_gravity="center"
-                android:layout_marginLeft="130sp"/>
-
-            <ImageView
-                android:layout_width="55sp"
-                android:layout_height="wrap_content"
-                android:src="@drawable/txt_store"
-                android:layout_gravity="center"
-                android:layout_marginLeft="30sp"/>
-
-            <ImageView
-                android:id="@+id/openmenu"
-                android:layout_width="30sp"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="30sp"
-                android:src="@drawable/hamburger_color"/>
-
-        </LinearLayout>
-
-        <!-- Main -->
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:orientation="vertical">
 
+            <!-- Header -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+
+                    <ImageView
+                        android:layout_width="70sp"
+                        android:layout_height="70sp"
+                        android:src="@drawable/logo"
+                        android:layout_margin="10sp"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="center">
+
+                        <ImageView
+                            android:layout_width="38sp"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/txt_fom" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="center">
+
+                        <ImageView
+                            android:layout_width="58sp"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/txt_store" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="center">
+
+                        <ImageView
+                            android:layout_width="30sp"
+                            android:layout_height="30sp"
+                            android:src="@drawable/menu" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <!-- banner -->
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="120sp"
-                android:src="@drawable/main_header"/>
+                android:src="@drawable/main_banner" />
 
+            <!-- 이미지 슬라이드 -->
             <ViewFlipper
                 android:id="@+id/image_slide"
                 android:layout_width="match_parent"
                 android:layout_height="440sp" />
 
-        </LinearLayout>
-    </LinearLayout>
+            <!-- BR MENU -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="1000sp"
+                android:background="@drawable/bg_menu"
+                android:orientation="vertical">
 
-    <!-- 메뉴바 -->
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/h_menu"
+                    android:layout_marginTop="30sp"
+                    android:layout_marginBottom="30sp"/>
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/img_menu_list"/>
+
+            </LinearLayout>
+
+            <!-- BR STORE -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/h_happyorder_delivery"
+                    android:layout_marginTop="40sp" />
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="230sp"
+                    android:src="@drawable/img_happyorder_delivery"
+                    android:padding="20sp"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+    <!-- 메뉴 -->
     <LinearLayout
-        android:id="@+id/submenu"
-        android:layout_width="300sp"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:layout_gravity="right"
-        android:visibility="invisible"
-        android:background="#fff">
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-        <!-- 메뉴바 Header -->
+        <!-- 메뉴 여백 -->
         <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="50sp"
-            android:background="#FF7C98"
-            android:orientation="horizontal">
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="#52000000"/>
 
-            <ImageView
-                android:layout_width="40sp"
-                android:layout_height="wrap_content"
-                android:src="@drawable/txt_login"
-                android:layout_gravity="center"
-                android:layout_marginLeft="20dp"/>
-
-            <ImageView
-                android:layout_width="30sp"
-                android:layout_height="wrap_content"
-                android:src="@drawable/txt_join"
-                android:layout_gravity="center"
-                android:layout_marginLeft="20dp"/>
-
-            <ImageView
-                android:id="@+id/closemenu"
-                android:layout_width="30sp"
-                android:layout_height="wrap_content"
-                android:src="@drawable/hamburger"
-                android:layout_marginLeft="140sp"/>
-
-        </LinearLayout>
-
-        <!-- nav -->
+        <!-- 메뉴바 -->
         <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:paddingLeft="20sp"
-            android:orientation="vertical">
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="right"
+            android:orientation="vertical"
+            android:layout_weight="3"
+            android:background="#fff">
 
+            <!-- 메뉴 Header -->
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="50sp"
-                android:orientation="horizontal">
+                android:layout_height="70sp"
+                android:background="#FF7C98">
 
                 <ImageView
-                    android:layout_width="200sp"
+                    android:layout_width="90sp"
                     android:layout_height="match_parent"
-                    android:src="@drawable/nav_favor"/>
+                    android:src="@drawable/txt_login"
+                    android:padding="20sp"/>
 
                 <ImageView
-                    android:layout_width="15sp"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/ico_nav"
-                    android:layout_gravity="center"
-                    android:layout_marginLeft="40sp"/>
+                    android:layout_width="100sp"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/txt_join"
+                    android:padding="29sp"/>
 
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="50sp"
-                android:orientation="horizontal">
+                android:layout_height="80sp"
+                android:gravity="center">
 
                 <ImageView
-                    android:id="@+id/img_menu"
-                    android:layout_width="70sp"
-                    android:layout_height="match_parent"
-                    android:src="@drawable/nav_menu"/>
-
-                <ImageView
-                    android:id="@+id/menudown"
-                    android:layout_width="15sp"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/ico_nav"
-                    android:layout_gravity="center"
-                    android:layout_marginLeft="170sp"/>
+                    android:src="@drawable/nav_favor"
+                    android:layout_weight="2"/>
 
-            </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/txt_icecream"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:visibility="gone">
-
-                <TextView
-                    android:id="@+id/moveice"
+                <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="아이스크림"
-                    android:textSize="14sp"
-                    android:textColor="#612F1F"
-                    android:layout_marginLeft="20sp"/>
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="50sp"
-                android:orientation="horizontal">
-
-                <ImageView
-                    android:layout_width="70sp"
-                    android:layout_height="match_parent"
-                    android:src="@drawable/nav_event"/>
-
-                <ImageView
-                    android:layout_width="15sp"
-                    android:layout_height="wrap_content"
                     android:src="@drawable/ico_nav"
-                    android:layout_gravity="center"
-                    android:layout_marginLeft="170sp"/>
+                    android:layout_weight="1" />
 
             </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="50sp"
-                android:orientation="horizontal">
-
-                <ImageView
-                    android:layout_width="70sp"
-                    android:layout_height="match_parent"
-                    android:src="@drawable/nav_store"/>
-
-                <ImageView
-                    android:layout_width="15sp"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/ico_nav"
-                    android:layout_gravity="center"
-                    android:layout_marginLeft="170sp"/>
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="50sp"
-                android:orientation="horizontal">
-
-                <ImageView
-                    android:layout_width="70sp"
-                    android:layout_height="match_parent"
-                    android:src="@drawable/nav_about"/>
-
-                <ImageView
-                    android:layout_width="15sp"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/ico_nav"
-                    android:layout_gravity="center"
-                    android:layout_marginLeft="170sp"/>
-
-            </LinearLayout>
-
-        </LinearLayout>
-
-        <!-- sns icon -->
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="horizontal"
-            android:paddingLeft="20sp"
-            android:paddingRight="20sp">
-
-            <ImageView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:src="@drawable/btn_facebook"
-                android:layout_weight="1"
-                android:padding="10sp"/>
-
-            <ImageView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:src="@drawable/btn_blog"
-                android:layout_weight="1"
-                android:padding="10sp"/>
-
-            <ImageView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:src="@drawable/btn_twitter"
-                android:layout_weight="1"
-                android:padding="10sp"/>
-
-            <ImageView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:src="@drawable/btn_instagram"
-                android:layout_weight="1"
-                android:padding="10sp"/>
 
         </LinearLayout>
 
