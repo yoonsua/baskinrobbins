@@ -20,12 +20,13 @@
 
             <ImageView
                 android:layout_width="50sp"
-                android:layout_height="50sp"
+                android:layout_height="40sp"
                 android:src="@drawable/bg_icecream_corn"
                 android:layout_centerHorizontal="true"
                 android:layout_alignParentBottom="true"/>
 
             <ImageView
+                android:id="@+id/icream"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:src="@drawable/ice"/>
